@@ -1,82 +1,80 @@
-# Deploying Spring Boot on Kubernetes
-
+# Deploying-sprint-boot-k8s
 Deploying Spring Boot application on Kubernetes
-
-## Step 1: Create EC2 Instance
 Create ec2 instance t2medium/t3medium
+![alt text](images/image.png)
+ ![alt text](images/image-1.png)
 
-![EC2 Instance Setup](images/image.png)
-
-## Step 2: Install Docker
+Install Docker on the Instance
 Docker is required because Minikube will use Docker as the container runtime
+ 
+![alt text](images/image-2.png)  
+![alt text](images/image-3.png)
+![alt text](images/image-4.png)
+ 
 
-![Docker Installation](images/image.png)
-
-## Step 3: Install Conntrack
 Conntrack helps Kubernetes manage the state of network connections between applications
+![alt text](images/image-9.png)
 
-![Conntrack Installation](images/image.png)
 
-## Step 4: Install and Start Minikube
+Install and Start Minikube
 Minikube creates a local Kubernetes cluster inside your EC2 VM.
+![alt text](images/image-10.png)
+![alt text](images/image-11.png)
+![alt text](images/image-12.png)
 
-![Minikube Setup](images/image.png)
-
-## Step 5: Install kubectl
+Install kubectl (Kubernetes CLI)
 kubectl is used to interact with Kubernetes cluster resources.
+![alt text](images/image-13.png)
+![alt text](images/image-14.png)
 
-![kubectl Installation](images/image.png)
-
-## Step 6: Install Git & Clone Repository
+Install Git & Clone Repository
 Git is used to download the Spring Boot + K8s project
+![alt text](images/image-15.png)
 
-![Git Clone](images/image.png)
-
-## Step 7: Deploy MySQL Database
+Deploy MySQL Database on Kubernetes
 Creates MySQL deployment + persistent volume claim + service.
+![alt text](images/image-16.png)
+![alt text](images/image-17.png)
 
-![MySQL Deployment](images/image.png)
-
-## Step 8: Access MySQL Pod
 Enter inside MySQL pod
+![alt text](images/image-18.png)
 
-![MySQL Pod Access](images/image.png)
+Install Maven
+Maven builds Spring Boot jar application. 
+![alt text](images/image-19.png)
+![alt text](images/image-20.png)
 
-## Step 9: Install Maven
-Maven builds Spring Boot jar application.
-
-![Maven Installation](images/image.png)
-
-## Step 10: Build Docker Image
+Build Docker Image
 Create application Docker image using Dockerfile
-
-![Docker Build](images/image.png)
-
-## Step 11: Push to DockerHub
+![alt text](images/image-21.png)
+![alt text](images/image-22.png)
+ 
 Push Image to DockerHub
-
-![DockerHub Push](images/image.png)
-
-## Step 12: Deploy Spring Boot App
+![alt text](images/image-23.png)
+![alt text](images/image-24.png)
+ 
 Deploy Spring Boot App on Kubernetes
+![alt text](images/image-25.png) 
+![alt text](images/image-26.png)
+![alt text](images/image-27.png)
+![alt text](images/image-28.png)
+ 
 
-![App Deployment](images/image.png)
-
-## Step 13: Access Application
 Access Application using Port Forwarding
 Port forwarding exposes internal K8s service to external host.
-
-![Port Forwarding](images/image.png)
-
-## Step 14: Open Kubernetes Dashboard
+![alt text](images/image-29.png) 
+Open Kubernetes Dashboard
 Start proxy to expose dashboard outside localhost
+![alt text](images/image-30.png) 
+![alt text](images/image-31.png)
 
-![Kubernetes Dashboard](images/image.png)
 
-## Dashboard Access
-Kubernetes Dashboard using Public IP:
-```
+
+
+ 
+Kubernetes Dashboard using Public IP
 http://13.235.115.61:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/replicaset?namespace=default
-```
-
-![Dashboard Access](images/image.png)
+ 
+![alt text](images/image-32.png)
+![alt text](images/image-33.png)
+![alt text](images/image-34.png)
