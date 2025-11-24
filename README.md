@@ -88,3 +88,5 @@ http://13.235.115.61:8001/api/v1/namespaces/kubernetes-dashboard/services/http:k
 ![alt text](images/image-33.png)
 
 ![alt text](images/image-34.png)
+
+
